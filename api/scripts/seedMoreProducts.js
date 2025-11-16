@@ -7,7 +7,7 @@ import { User } from "../src/models/user.model.js";
 dotenv.config();
 
 try {
-  await mongoose.connect('mongodb+srv://iamsushant431_db_user:quickgpt431@cluster0.ziixj2q.mongodb.net/?appName=Cluster0');
+  await mongoose.connect(process.env.MONGODB_URI);
   console.log("✅ Connected to MongoDB Atlas");
 
   const admin = await User.findOne({ email: "thinkfashion@gmail.com" });
